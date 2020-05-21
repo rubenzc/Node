@@ -1,4 +1,4 @@
-//Creating Express Server
+//Express Server
 
 //Import express
 const express = require ('express');
@@ -13,6 +13,9 @@ app.set('view engine', 'pug');
 
 //Add wiews
 app.set('views', path.join(__dirname, './views'));
+
+//Load static folder called Public
+app.use(express.static('public'));
 
 //Load routes
 //Use supports get, update, delete and post requests
