@@ -1,4 +1,27 @@
 extends ../layout/index
 
 block content
-    h1 About us
+    main.container.mt-5
+        .row
+            .col.md-5
+                img.img-fluid(src="img/nosotros.jpg", alt="About us")
+            .col.md-7
+                h1 #{page}
+                blockquote Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla finibus posuere justo, a ultricies urna facilisis sit amet. Etiam quis nulla nec tortor ultrices eleifend vestibulum ac sapien. Sed luctus lectus ultrices lorem sollicitudin maximus.
+                p Nulla vel accumsan leo, sed elementum ex. Donec sed sapien sed nunc scelerisque gravida. Fusce bibendum magna vitae convallis vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                p Aenean auctor fermentum condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+    .icons-list
+        .container.mt-5.py-5.text-center
+            .row
+                .col-md-4
+                    img(src="img/icono_seguridad.svg", class="img-fluid mb-4")
+                    h2.mb-4 Security
+                    p Aenean auctor fermentum condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                .col-md-4
+                    img(src="img/icono_destinos.svg", class="img-fluid mb-4")
+                    h2.mb-4 Best places
+                    p Aenean auctor fermentum condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                .col-md-4
+                    img(src="img/icono_precios.svg", class="img-fluid mb-4")
+                    h2.mb-4 Best prices
+                    p Aenean auctor fermentum condimentum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
