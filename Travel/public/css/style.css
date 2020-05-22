@@ -60,7 +60,7 @@ h3 {
 .home {
     position: relative;
 }
-.home .navegacion {
+.home .navigation {
     background: transparent;
     position: absolute;
     top: 0;
@@ -78,7 +78,7 @@ p {
     font-size: 1.2rem;
     line-height: 2;
 }
-.navegacion {
+.navigation {
     background-color: #15B9D5;
 }
 header .nav a {
@@ -92,22 +92,22 @@ footer .nav a,
     font-size: 1.6rem;
     color: black;
 }
-.listado-iconos {
+.icons-list {
     background-color: rgb(245, 245, 245);
 }
-.listado-iconos img {
+.icons-list img {
     height: 100px;
 }
 
 
-.descuento {
+.discount {
     height: 400px;
     background-image: linear-gradient( rgba(0, 0, 0, .5) 0%,  rgba(0, 0, 0, .5) 100%),  url(../img/cupon.jpg);
     background-repeat: no-repeat;
     background-size: cover;
 }
 @media (min-width:768px) {
-    .descuento {
+    .discount {
         height: 400px;
         background-image:  linear-gradient(
             to right, 
@@ -118,26 +118,26 @@ footer .nav a,
         ), url(../img/cupon.jpg);
     }
 }
-.descuento .contenido {
+.discount .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 400px;
     color: white;
 }
-.descuento p {
+.discount p {
     font-family: 'Staatliches', cursive;
     line-height: .8;
 }
-.descuento .titulo {
+.discount .title {
     font-size: 2.4rem;
 }
-.descuento .precio {
+.discount .price {
     color: #15B9D5;
     font-size: 3rem;
 }
 
-.proximos-viajes p {
+.next-travels p {
     font-size: .9rem;
 }
 i {
@@ -145,11 +145,11 @@ i {
     font-size: 2rem;
 }
 
-.testimoniales p{
+.reviews p{
     font-size: .8rem;
     font-weight: normal;
 }
-.testimoniales p::before {
+.reviews p::before {
     background-image: url(../img/quote.jpg);
     background-repeat: no-repeat;
     background-position: center center;
