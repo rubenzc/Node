@@ -1,14 +1,14 @@
 const Review = require('../models/Reviews');
 
-exports.showReviews = (req, res) => {
-    Review.findAll()
-        .then(reviews => res.render('reviews', {
-            page: 'Reviews',
-            reviews
-        }))
+exports.showReviews = async (req, res) => {
+    const reviews = await Review.findAll()
+    res.render('reviews', {
+        page: 'reviews',
+        reviews
+    })
 }
 
-exports.infoReview =  (req, res) => {
+exports.infoReview =  async (req, res) => {
     //Validate filled all forms
     let {name, mail, message} = req.body;
 
@@ -26,6 +26,7 @@ exports.infoReview =  (req, res) => {
     //Check errors
     if(errors.length > 0) {
         //Show view wuth errors
+        const reviews = await Review.findAll() 
         res.render('reviews', {
             errors,
             name,
