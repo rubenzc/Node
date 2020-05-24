@@ -1,0 +1,43 @@
+extends ../layout/index
+
+block content
+    main.container.mt-5
+        h1.text-center.mb-5 #{page}
+
+
+        .row
+            .col-md-12
+                blockquote.text-center Our Clients experiences
+                .row.reviews
+                    each review in reviews
+                        .col-md-6.col-lg-4.mb-4
+                            .card
+                                .card-body
+                                    blockquote.blockquote
+                                        p.mb-0
+                                            | #{review.message}
+                                        footer.blockquote-footer
+                                            | #{review.name}
+
+
+            .col-md-12
+                h2.text-center Add a review
+                if(errors)
+                    each error in errors
+                        .alert.alert-danger.text-center=error.message
+
+
+                .row.justify-content-center
+                    .col-md-8
+                        form(action='/reviews', method="POST")
+                            .form-group
+                                label(for="name") Name
+                                input(id="name", class="form-control" type="text", placeholder="Your name", name="name", value=name)
+                            .form-group
+                                label(for="mail") Mail
+                                input(id="mail", class="form-control" type="email", placeholder="Your mail", name="mail", value=mail)
+                            .form-group
+                                label(for="name") Message
+                                textarea#message(class="form-control", rows="3", placeholder="Your message", name="message")=message
+                            input.btn.btn-success.btn-block(type="submit", value="ADD")
+                        
