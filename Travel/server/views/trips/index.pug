@@ -3,18 +3,4 @@ extends ../layout/index
 block content
     main.container.mt-5
         h1.text-center-mb-5 #{page}
-        .row.next-trips
-            each trip in trips
-                .col.md-6.col-lg-4.mb-4
-                    .card
-                        img(src=`img/destinos_${trip.image}.jpg`, class="img-fluid")
-                        .card-body
-                            h2=trip.title
-                            p
-                                i.fas.fa-calendar-alt
-                                |  #{trip.departure_date} - #{trip.arrival_date}
-                            p
-                                i.fas.fa-dollar-sign
-                                |  #{trip.price}
-                            p= trip.description.substr(0, 100)
-                            a(href=`trips/${trip.id}`, class="btn btn-success btn-block") More info
+        include ../layout/partials/trips
