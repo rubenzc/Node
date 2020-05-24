@@ -1,16 +1,21 @@
 const express = require ('express');
 const router = express.Router();
 
-module.exports = function() {
-    router.get('/', (req, res) => {
-        res.render('index');
-    })
+//Controllers
+const aboutUsController = require ('../controllers/aboutUsController');
+const homeController = require ('../controllers/homeController');
+const tripsController = require('../controllers/tripsController.js');
+const reviewsController = require('../controllers/reviewsController.js');
 
-    router.get('/about-us', (req, res) => {
-        res.render('about-us', {
-            page: 'About us'
-        });
-    })
+module.exports = function() {
+
+    router.get('/', homeController.queriesHomePage)
+    router.get('/about-us', aboutUsController.infoAboutUs)
+    router.get('/trips', tripsController.showTrips);
+    router.get('/trips/:id', tripsController.infoTrip);
+    router.get('/reviews', reviewsController.showReviews);
+    //Fill form
+    router.post('/reviews', reviewsController.infoReview);
 
     return router;
 }
